@@ -1,3 +1,21 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended", // eslint recommended rule settings
+    "plugin:@typescript-eslint/recommended",  // Recommended rule settings for typescript-eslint
+    "prettier"  // Turn off the conflict rule with Prettier (must be on the last line to override other settings)
+  ],
+  "plugins": [
+    "single-import-sort", // Automatic alignment of import statements
+    "import", // Extend the above plugin (add rules for auto-alignment)
+    "unused-imports"  // Remove unused import statements
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error",  // Set sort rules for import
+    "simple-import-sort/exports": "error",  // Set sort rules for export
+    "import/first": "error",  // Ensure all imports are the top of the file
+    "import/newline-after-import": "error", // Make sure there is a line break after import
+    "import/no-duplicates": "error",  // Merge imports of the same file
+    "unused-imports/no-unused-imports": "error" // Remove unused import statements
+  }
 }
